@@ -9,6 +9,9 @@ type Patient = {
   Name: string;
   Age: number;
   Contact: Contact;
+  LastAssessment: string;
+  FMSScore: number;      
+  Status: string;
 };
 
 // Type for the main User object
@@ -19,9 +22,6 @@ export type User = {
   Image: string;
   Role: string;
   Patient: Patient[];
-  "Last Assessment": string; // can also be Date if you parse it
-  "FMS Score": number;      // or number if you convert
-  Status: string;
-}[];
+};
 
 

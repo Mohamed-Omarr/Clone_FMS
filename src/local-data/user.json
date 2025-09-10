@@ -1,20 +1,20 @@
-[
+{
+  "id": "1",
+  "Name": "ali",
+  "Email": "ali@gmail.com",
+  "Image": "/src/assets/react.svg",
+  "Role": "Therapist",
+  "Patient": [
     {
-        "id":"1",
-        "Name": "ali",
-        "Email": "ali@gmail.com",
-        "Image":"/public/assets/react.svg",
-        "Role": "Therapist",
-        "Patient": [{
-            "Name":"mohamed",
-            "Age":20,
-            "Contact":{
-                "email":"mohamed@gmail.com",
-                "phone": 5551234567
-            }
-        }],
-        "Last Assessment":"2024-01-15",
-        "FMS Score": 18,
-        "Status": "active"
+      "Name": "mohamed",
+      "Age": 20,
+      "Contact": {
+        "email": "mohamed@gmail.com",
+        "phone": 5551234567
+      },
+      "LastAssessment": "2024-01-15",
+      "FMSScore": 18,
+      "Status": "active"
     }
-]
+  ]
+}

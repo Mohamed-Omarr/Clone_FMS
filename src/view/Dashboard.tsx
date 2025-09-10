@@ -1,36 +1,50 @@
 import { Button } from "@/components/ui/button";
 import type { User } from "@/types";
+import { useOutletContext } from "react-router-dom";
 
-function Dashboard({prop}:{prop:User}) {
+function Dashboard() {
+  // single user from router context
+  const user = useOutletContext<User>();
+
+  // array of all FMS scores for this user's patients
+  const allScores: number[] = user.Patient.map((patient) => patient.FMSScore);
+
+  const averageScore =
+    allScores.reduce((sum, score) => sum + score, 0) / allScores.length;
+
+  const averageScoreRounded = Math.round(averageScore * 10) / 10;
+
+  // count of active patients
+  const activePatientsCount = user.Patient.filter(
+    (p) => p.Status.toLowerCase() === "active"
+  ).length;
+
   return (
     <main className="flex-1 overflow-auto p-6">
-      <div className="max-w-4xl ">
+      <div className="max-w-4xl">
         <div className="grid gap-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="bg-card rounded-lg border p-6">
               <h3 className="text-sm font-medium text-muted-foreground mb-2">
                 Total Patients
               </h3>
-              <p className="text-3xl font-bold">5</p>
+              <p className="text-3xl font-bold">{user.Patient.length}</p>
             </div>
             <div className="bg-card rounded-lg border p-6">
               <h3 className="text-sm font-medium text-muted-foreground mb-2">
                 Active Patients
               </h3>
-              <p className="text-3xl font-bold text-green-600">3</p>
-            </div>
-            <div className="bg-card rounded-lg border p-6">
-              <h3 className="text-sm font-medium text-muted-foreground mb-2">
-                Pending Assessments
-              </h3>
-              <p className="text-3xl font-bold text-orange-600">1</p>
+              <p className="text-3xl font-bold text-green-600">
+                {activePatientsCount}
+              </p>
             </div>
             <div className="bg-card rounded-lg border p-6">
               <h3 className="text-sm font-medium text-muted-foreground mb-2">
                 Average FMS Score
               </h3>
               <p className="text-3xl font-bold">
-                16.5<span className="text-lg text-muted-foreground">/21</span>
+                {averageScoreRounded}
+                <span className="text-lg text-muted-foreground">/21</span>
               </p>
             </div>
           </div>

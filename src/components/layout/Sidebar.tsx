@@ -6,8 +6,8 @@ import { useLocation } from "react-router-dom"; // <-- Vite-friendly
 
 const navigationLinks = [
   { href: "/", label: "Dashboard", icon: "📊" },
-  { href: "/projects", label: "Patient Management", icon: "📁" },
-  { href: "/FMS-Assessments", label: "FMS Assessments", icon: "⚙️" },
+  { href: "/view/PatientManagement", label: "Patient Management", icon: "📁" },
+  // { href: "/FMS-Assessments", label: "FMS Assessments", icon: "⚙️" },
 ];
 
 function Sidebar() {
