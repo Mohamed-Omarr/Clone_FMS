@@ -4,8 +4,12 @@ import { RouterProvider } from "react-router-dom";
 import { router } from "./routes/router";
 import "./index.css";
 
+/*
+  use react-router-dom for navigation and routes
+*/
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} /> {/* ✅ no children, no BrowserRouter */}
+    <RouterProvider router={router} />
   </React.StrictMode>
 );

@@ -12,6 +12,13 @@
         "email": "mohamed@gmail.com",
         "phone": 5551234567
       },
+      "Assessment":{
+        "Status": "completed",
+        "Therapist": "ali",
+        "Duration": "12 min",
+        "FMSScore": 18,
+        "Date":"2024-01-10"
+      },
       "LastAssessment": "2024-01-15",
       "FMSScore": 18,
       "Status": "active"

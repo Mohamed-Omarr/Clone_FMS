@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button";
 import type { User } from "@/types";
 import { useOutletContext } from "react-router-dom";

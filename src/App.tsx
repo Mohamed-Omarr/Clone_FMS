@@ -1,7 +1,13 @@
 import { Outlet } from "react-router-dom";
-import Header from "./components/layout/Header";
-import Sidebar from "./components/layout/Sidebar";
+import Header from "./components/layout/app/Header";
+import Sidebar from "./components/layout/app/Sidebar";
 import data from "@/local-data/user.json";
+
+
+
+/*
+  display the content of the project and as layout of it 
+*/
 
 function App() {
   return (
@@ -9,7 +15,7 @@ function App() {
       <Sidebar />
       <div className="flex-1 flex flex-col">
         <Header prop={data} />
-        <Outlet context={data} />
+        <Outlet />
       </div>
     </div>
   );

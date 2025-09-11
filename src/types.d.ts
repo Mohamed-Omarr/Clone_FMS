@@ -4,11 +4,20 @@ type Contact = {
   phone: number;
 };
 
+type Assessment = {
+  Status: string,
+  Therapist: string,
+  Duration: string,
+  FMSScore: number
+  Date: string;
+}
+
 // Type for each Patient
 type Patient = {
   Name: string;
   Age: number;
   Contact: Contact;
+  Assessment:Assessment,
   LastAssessment: string;
   FMSScore: number;      
   Status: string;
@@ -25,3 +34,8 @@ export type User = {
 };
 
 
+// auth 
+type UserCredentials = {
+  email: string;
+  password: string;
+};
